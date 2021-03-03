@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body style="margin: 4px;">
+    <style>
+        label {
+            display: block;
+            font: 1rem 'Fira Sans', sans-serif;
+        }
+        
+        input,
+        label {
+            margin: .4rem 0;
+        }
+    </style>
+
+    <div class="container" style="background-image: url(../static/Flightbg.jpg); background-size: cover">
+        <div class="row">
+            <p class="h2" style="color: azure;">Predict Your Flight</p>
+            <div class="col">
+                <form action="predict" method="POST">
+                    <div class="col-4">
+
+                    
+                    <label for="start" style="color: azure;">Start date:</label>
+        
+                            <input type="date" id="start" name="trip-start"
+                            value="2021-01-01" min="2020-01-01" max="2022-12-31">
+                        
+                            <label for="flight" style="color: azure;">Choose a flight:</label>
+                            <select id="flight" name="flight" class="form-select" >
+                                <option value="Airline_Air India">Airline_Air India</option>
+                                <option value="Airline_GoAir">Airline_GoAir</option>
+                                <option value="Airline_IndiGo">Airline_IndiGo</option>
+                                <option value="Airline_Jet Airways">Airline_Jet Airways</option>
+                                <option value="Airline_Jet Airways Business">Airline_Jet Airways Business</option>
+                                <option value="Airline_Multiple carriers">Airline_Multiple carriers</option>
+                                <option value="Airline_Multiple carriers Premium economy">Airline_Multiple carriers Premium economy</option>
+                                <option value="Airline_SpiceJet">Airline_SpiceJet</option>
+                                <option value="Airline_Trujet">Airline_Trujet</option>
+                                <option value="Airline_Vistara">Airline_Vistara</option>
+                                <option value="Airline_Vistara Premium economy">Airline_Vistara Premium economy</option>
+                            </select>
+                          
+                          <label for="Source" style="color: azure;">Source :</label>
+                          <select id="Source" name="Source" class="form-select">
+                            <option value="Chennai">Chennai</option>
+                              <option value="Delhi">Delhi</option>
+                              <option value="Kolkata">Kolkata</option>
+                              <option value="Mumbai">Mumbai</option>
+                              
+                              
+                          </select>
+                          <label for="Destination" style="color: azure;"> <p>Destination :</p> </label>
+                          <select id="Destination" name="Destination" class="form-select">
+                            <option value="New Delhi">New Delhi</option>
+                            <option value="Hyderabad">Hyderabad</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Kolkata">Kolkata</option>
+                            <option value="Cochin">Cochin</option>
+                            
+                        </select>
+                        <label for="Dep_time" style="color: azure;">Departure time</label>
+                           <input type="time" name="Dep" required>
+
+                        <label for="Arrive_time" style="color: azure;">Arrival time</label>
+                           <input type="time" name="Arrive" required >  
+                            <label for="Stops" style="color: azure;">Stops :</label>
+                            <input type="number" value="Stops" name="Stops" required>
+                          <input type="submit" value="Get Data" class="btn btn-primary">
+                    </div>
+                    </form>
+                    
+                    <p class="h3" style="color: azure;">Your Predicted price is Rs {{testdata}}</p>
+            </div>
+            
+        </div>
+        <div class="row-2">
+            <div class="col-3">
+                <p class="h3">
+
+                   <p class="lead">
+                    
+                   </p> 
+                </p>
+            </div>
+        </div>
+        
+    </div>
+    
+</body>
+</html>
